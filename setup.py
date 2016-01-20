@@ -2,7 +2,7 @@ from distutils.core import setup
 
 setup(
     name='nose_env_config',
-    version='0.1',
+    version='0.1.1',
     packages=['nose_env_config'],
     url='https://github.com/andreyrusanov/nose_env_config',
     license='MIT',
@@ -14,14 +14,11 @@ setup(
             'nose_env_config = nose_env_config:NoseEnvConfig',
         ]
     },
-    # TODO: test
     test_suite='nose.collector',
-    # TODO: test
     include_package_data=True,
     description='Plugin for Nose, which provides easy and flexible interface for environment variables configuration',
     long_description=open('README.md').read(),
-
-    # TODO: finish
+    
     classifiers=[
         'Environment :: Console',
         'Intended Audience :: Developers',
