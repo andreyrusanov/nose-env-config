@@ -30,10 +30,10 @@ class CreateFilesMixin(FileBasedEnvConfMixin):
         self.create_env_config(path, data)
 
 
-class TestFullPriorities(PluginBaseTestCase):
-    args = [
-        '--env-vars-file={}'.format(os.path.join(current_path, CONFIG_DEFAULT_FILENAME[::-1])),
-    ]
-    def setUp(self):
-        os.environ[CONFIG_ENV_VARIABLE] = ''
-        super(TestFullPriorities, self).setUp()
+#class TestFullPriorities(PluginBaseTestCase):
+#    args = [
+#        '--env-vars-file={}'.format(os.path.join(current_path, CONFIG_DEFAULT_FILENAME[::-1])),
+#    ]
+#    def setUp(self):
+#        os.environ[CONFIG_ENV_VARIABLE] = ''
+#        super(TestFullPriorities, self).setUp()
