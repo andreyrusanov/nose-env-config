@@ -2,9 +2,9 @@ from distutils.core import setup
 
 setup(
     name='nose_env_config',
-    version='0.1.2',
+    version='0.1.3',
     packages=['nose_env_config'],
-    url='https://github.com/andreyrusanov/nose_env_config',
+    url='https://github.com/andreyrusanov/nose-env-config',
     license='MIT',
     author='Andrey Rusanov',
     author_email='rusanov.andrey.maiL@gmail.com',
