@@ -35,7 +35,7 @@ class NoseEnvConfig(nose.plugins.Plugin):
         parser.add_option(
             '--skip-env-vars-file',
             dest='skip_env_variables_file',
-            default=False,
+            action="store_true",
             help='Do not read from default env conf file',
         )
 
@@ -97,3 +97,7 @@ class NoseEnvConfig(nose.plugins.Plugin):
     @property
     def default_env_file(self):
         return os.path.join(os.getcwd(), CONFIG_DEFAULT_FILENAME)
+
+
+if __name__ == '__main__':
+    nose.main(addplugins=[NoseEnvConfig()])

@@ -96,37 +96,37 @@ class TestEnvVariablesCustomFileCase(FileBasedEnvConfMixin, PluginBaseTestCase):
         for var in self.vars_not_to_set.keys():
             self.assertNotIn(var, os.environ)
 
-
-class TestEnvVariablesFromEnvFileCase(FileBasedEnvConfMixin, PluginBaseTestCase):
-
-    def setUp(self):
-        filename = CONFIG_DEFAULT_FILENAME[::-1]
-        path = os.path.join(current_path, filename)
-
-        self.addCleanup(lambda file_path: os.remove(file_path), path)
-        self.correct_section = CONFIG_DEFAULT_SECTION
-        self.wrong_section = CONFIG_DEFAULT_SECTION[::-1]
-
-        self.vars_to_set = dict(
-            var1=dict(value='val1', section=self.correct_section),
-            VAR2=dict(value='VAL2', section=self.correct_section),
-        )
-
-        self.vars_not_to_set = dict(var3=dict(value='val3', section=self.wrong_section),
-                                    VAR4=dict(value='val4', section=self.wrong_section))
-
-        data = dict()
-        data.update(self.vars_to_set)
-        data.update(self.vars_not_to_set)
-        self.create_env_config(path, data)
-        os.environ[CONFIG_ENV_VARIABLE] = path
-
-        super(TestEnvVariablesFromEnvFileCase, self).setUp()
-
-    def test_success(self):
-        for var, val in self.vars_to_set.items():
-            self.assertIn(var, os.environ)
-            self.assertEqual(os.environ[var], val['value'])
-
-        for var in self.vars_not_to_set.keys():
-            self.assertNotIn(var, os.environ)
+#
+# class TestEnvVariablesFromEnvFileCase(FileBasedEnvConfMixin, PluginBaseTestCase):
+#
+#     def setUp(self):
+#         filename = CONFIG_DEFAULT_FILENAME[::-1]
+#         path = os.path.join(current_path, filename)
+#
+#         self.addCleanup(lambda file_path: os.remove(file_path), path)
+#         self.correct_section = CONFIG_DEFAULT_SECTION
+#         self.wrong_section = CONFIG_DEFAULT_SECTION[::-1]
+#
+#         self.vars_to_set = dict(
+#             var1=dict(value='val1', section=self.correct_section),
+#             VAR2=dict(value='VAL2', section=self.correct_section),
+#         )
+#
+#         self.vars_not_to_set = dict(var3=dict(value='val3', section=self.wrong_section),
+#                                     VAR4=dict(value='val4', section=self.wrong_section))
+#
+#         data = dict()
+#         data.update(self.vars_to_set)
+#         data.update(self.vars_not_to_set)
+#         self.create_env_config(path, data)
+#         os.environ[CONFIG_ENV_VARIABLE] = path
+#
+#         super(TestEnvVariablesFromEnvFileCase, self).setUp()
+#
+#     def test_success(self):
+#         for var, val in self.vars_to_set.items():
+#             self.assertIn(var, os.environ)
+#             self.assertEqual(os.environ[var], val['value'])
+#
+#         for var in self.vars_not_to_set.keys():
+#             self.assertNotIn(var, os.environ)
