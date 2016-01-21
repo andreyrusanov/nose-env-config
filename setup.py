@@ -17,7 +17,7 @@ setup(
     test_suite='nose.collector',
     include_package_data=True,
     description='Plugin for Nose, which provides easy and flexible interface for environment variables configuration',
-    long_description=open('README.md').read(),
+    long_description=open('README.rst').read(),
     
     classifiers=[
         'Environment :: Console',
