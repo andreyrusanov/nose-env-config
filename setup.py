@@ -2,12 +2,11 @@ from distutils.core import setup
 
 setup(
     name='nose_env_config',
-    version='0.1.4',
+    version='0.1.5',
     packages=['nose_env_config'],
     url='https://github.com/andreyrusanov/nose-env-config',
     license='MIT',
     author='Andrey Rusanov',
-    author_email='rusanov.andrey.maiL@gmail.com',
     install_requires=['nose>=1.0.0'],
     entry_points={
         'nose.plugins.0.10': [
