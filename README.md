@@ -1,6 +1,12 @@
 # nose-env-config
 Plugin for configuration env variables with nose
 
+### Installation
+```
+pip install nose-env-config
+```
+
+### Usage
 Available options:    
 Set variables on nose run:    
 ```
