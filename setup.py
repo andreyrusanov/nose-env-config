@@ -2,7 +2,7 @@ from distutils.core import setup
 
 setup(
     name='nose_env_config',
-    version='0.1.5',
+    version='0.1.6',
     packages=['nose_env_config'],
     url='https://github.com/andreyrusanov/nose-env-config',
     license='MIT',
